@@ -67,6 +67,8 @@ NODE_NET_IFACE=${NODE_NET_IFACE:-""}
 # Allowance for Genesis/Armada to settle in seconds:
 POST_GENESIS_DELAY=${POST_GENESIS_DELAY:-60}
 
+NODE_SUBNETS=${NODE_SUBNETS:-""}
+
 # Command shortcuts
 PEGLEG="${REPO_DIR}/tools/airship pegleg"
 SHIPYARD="${REPO_DIR}/tools/airship shipyard"
@@ -150,6 +152,8 @@ data:
   hostip: ${HOSTIP}
   hostcidr: ${HOSTCIDR}
   interface: ${NODE_NET_IFACE}
+  interface_gw: ${NODE_NET_IFACE_GATEWAY_IP}
+  subnets: ${NODE_SUBNETS}
   maas-ingress: '192.169.1.5/32'
 EOF
 }
@@ -205,6 +209,10 @@ function generate_genesis() {
 }
 
 function run_genesis() {
+  # do not override /etc/hosts
+  cp /etc/hosts /etc/hosts.save
+  sed -i -e 's|# Disable swap|cp /etc/hosts.save /etc/hosts|g' ${WORKSPACE}/genesis/genesis.sh
+
   # Runs the genesis script that was generated
   ${WORKSPACE}/genesis/genesis.sh
 }

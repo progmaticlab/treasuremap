@@ -83,6 +83,36 @@ sleep 1
 echo "Let's collect some information about your VM to get started."
 sleep 1
 
+echo "Setup Tungsten Fabric requirements "
+apt-get install -y python-setuptools
+easy_install pip
+pip install ipaddress
+export NODE_NET_IFACE=$(ip route get 1 | grep -o "dev.*" | awk '{print $2}')
+export NODE_NET_IFACE_GATEWAY_IP="$(ip route get 1 | awk '/1.0.0.0/{print $3}')"
+if_cidr=`ip addr | grep -A 3 $NODE_NET_IFACE | awk '/inet /{print $2}'`
+export NODE_SUBNETS=`python -c "import ipaddress; print str(ipaddress.ip_network(u'$if_cidr', strict=False))"`
+
+
+replace_charts() {
+echo "Applying TungstenFabric compatibility patch"
+
+rm -rf ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/osh/openstack-compute-kit
+rm -rf ${AIAB_DIR}/../../../gloval/sofware/config/versions.yaml
+
+mv ${AIAB_DIR}/tf_charts/bootstrap.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}/manifests/bootstrap.yaml
+mv ${AIAB_DIR}/tf_charts/common-addresses.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}/networks/common-addresses.yaml
+mv ${AIAB_DIR}/tf_charts/full-site.yaml  ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/full-site.yaml
+mv ${AIAB_DIR}/tf_charts/genesis.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}/profiles/genesis.yaml
+mv ${AIAB_DIR}/tf_charts/endpoints.yaml ${AIAB_DIR}/../../../type/sloop/config/endpoints.yaml
+
+cp -r  ${AIAB_DIR}/tf_charts/versions.yaml ${AIAB_DIR}/../../../global/software/config/versions.yaml
+cp -r ${AIAB_DIR}/tf_charts/ingress ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/kubernetes/
+cp -r ${AIAB_DIR}/tf_charts/openstack-compute-kit ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/osh/
+cp -r  ${AIAB_DIR}/tf_charts/openstack-keystone ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/osh/
+cp -r  ${AIAB_DIR}/tf_charts/tf ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/
+echo "Charts where  replaced "
+}
+
 # IP and Hostname setup
 get_local_ip ()
 {
@@ -161,5 +191,11 @@ fi
 
 echo ""
 echo "Starting Airship deployment..."
+replace_charts
 sleep 1
+
+
 ${AIAB_DIR}/common/deploy-airship.sh demo
+cid=$(docker ps | awk '/k8s_contrail-webui_contrail-webui/{print $1}')
+docker exec -it $cid bash -c "printf \"\nconfig.staticAuth = [];\nconfig.staticAuth[0] = {};\nconfig.staticAuth[0].username = 'admin';\nconfig.staticAuth[0].password = 'contrail123';\nconfig.staticAuth[0].roles = ['cloudAdmin'];\n\" >> /etc/contrail/config.global.js"
+docker exec -it $cid tail -6 /etc/contrail/config.global.js

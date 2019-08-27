@@ -463,12 +463,12 @@ data:
         type: git
       postgresql:
         location: https://opendev.org/openstack/openstack-helm-infra
-        reference: bc20c6c8b6de08659be7e469388fe2f6ac231dd1
+        reference: 5e1ecd9840397bf9e8829ce0d98fcb721db1b74e
         subpath: postgresql
         type: git
       postgresql-htk:
         location: https://opendev.org/openstack/openstack-helm-infra
-        reference: bc20c6c8b6de08659be7e469388fe2f6ac231dd1
+        reference: 5e1ecd9840397bf9e8829ce0d98fcb721db1b74e
         subpath: helm-toolkit
         type: git
       promenade:
@@ -794,26 +794,26 @@ data:
     repositories:
       docker:
         components:
-          - stable
+        - stable
         distributions:
-          - xenial
+        - xenial
         repo_type: apt
         url: https://download.docker.com/linux/ubuntu/
       main_archive:
         components:
-          - main
-          - universe
-          - multiverse
+        - main
+        - universe
+        - multiverse
         distributions:
-          - xenial
+        - xenial
         repo_type: apt
         subrepos:
-          - security
-          - updates
-          - backports
+        - security
+        - updates
+        - backports
         url: http://us.archive.ubuntu.com/ubuntu
     unnamed:
-      - ceph-common
+    - ceph-common
 metadata:
   labels:
     name: software-versions-global

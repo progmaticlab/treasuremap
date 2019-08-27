@@ -794,26 +794,26 @@ data:
     repositories:
       docker:
         components:
-        - stable
+          - stable
         distributions:
-        - xenial
+          - xenial
         repo_type: apt
         url: https://download.docker.com/linux/ubuntu/
       main_archive:
         components:
-        - main
-        - universe
-        - multiverse
+          - main
+          - universe
+          - multiverse
         distributions:
-        - xenial
+          - xenial
         repo_type: apt
         subrepos:
-        - security
-        - updates
-        - backports
+          - security
+          - updates
+          - backports
         url: http://us.archive.ubuntu.com/ubuntu
     unnamed:
-    - ceph-common
+      - ceph-common
 metadata:
   labels:
     name: software-versions-global

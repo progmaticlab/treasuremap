@@ -205,8 +205,8 @@ data:
         subpath: helm-toolkit
         type: git
       neutron:
-        location: https://opendev.org/openstack/openstack-helm
-        reference: 50c982eab03a0d04487479680c02f74bc6ef3e29
+        location: https://github.com/OlegBravo/openstack-helm
+        reference: nova-neutron
         subpath: neutron
         type: git
       neutron-htk:
@@ -215,8 +215,8 @@ data:
         subpath: helm-toolkit
         type: git
       nova:
-        location: https://opendev.org/openstack/openstack-helm
-        reference: 50c982eab03a0d04487479680c02f74bc6ef3e29
+        location: https://github.com/OlegBravo/openstack-helm
+        reference: nova-neutron
         subpath: nova
         type: git
       nova-htk:
@@ -794,26 +794,26 @@ data:
     repositories:
       docker:
         components:
-        - stable
+          - stable
         distributions:
-        - xenial
+          - xenial
         repo_type: apt
         url: https://download.docker.com/linux/ubuntu/
       main_archive:
         components:
-        - main
-        - universe
-        - multiverse
+          - main
+          - universe
+          - multiverse
         distributions:
-        - xenial
+          - xenial
         repo_type: apt
         subrepos:
-        - security
-        - updates
-        - backports
+          - security
+          - updates
+          - backports
         url: http://us.archive.ubuntu.com/ubuntu
     unnamed:
-    - ceph-common
+      - ceph-common
 metadata:
   labels:
     name: software-versions-global

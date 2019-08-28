@@ -446,7 +446,13 @@ data:
           internal: 5000
       auth:
         admin:
+          region_name: RegionOne
+          username: admin
           password: password123
+          project_name: admin
+          user_domain_name: default
+          project_domain_name: default
+          default_domain_id: default
     image:
       name: glance
       hosts:

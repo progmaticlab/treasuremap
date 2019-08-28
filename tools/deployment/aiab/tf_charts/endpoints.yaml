@@ -445,7 +445,8 @@ data:
           default: 80
           internal: 5000
       auth:
-        password: "password123"
+        admin:
+          password: password123
     image:
       name: glance
       hosts:

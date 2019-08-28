@@ -206,7 +206,7 @@ data:
         type: git
       neutron:
         location: https://github.com/OlegBravo/openstack-helm
-        reference: nova-neutron
+        reference: 440849a2a7dc205d5d6cdb5ef45af33f764e606f
         subpath: neutron
         type: git
       neutron-htk:
@@ -216,7 +216,7 @@ data:
         type: git
       nova:
         location: https://github.com/OlegBravo/openstack-helm
-        reference: nova-neutron
+        reference: 440849a2a7dc205d5d6cdb5ef45af33f764e606f
         subpath: nova
         type: git
       nova-htk:
@@ -462,13 +462,13 @@ data:
         subpath: helm-toolkit
         type: git
       postgresql:
-        location: https://github.com/OlegBravo/openstack-helm-infra
-        reference: 18202ebd5684998613bddde401cc35f55e0f8ff7
+        location: https://opendev.org/openstack/openstack-helm-infra
+        reference: 5e1ecd9840397bf9e8829ce0d98fcb721db1b74e
         subpath: postgresql
         type: git
       postgresql-htk:
-        location: https://github.com/OlegBravo/openstack-helm-infra
-        reference: 18202ebd5684998613bddde401cc35f55e0f8ff7
+        location: https://opendev.org/openstack/openstack-helm-infra
+        reference: 5e1ecd9840397bf9e8829ce0d98fcb721db1b74e
         subpath: helm-toolkit
         type: git
       promenade:

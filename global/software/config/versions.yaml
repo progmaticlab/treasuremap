@@ -165,8 +165,8 @@ data:
         subpath: helm-toolkit
         type: git
       keystone:
-        location: https://opendev.org/openstack/openstack-helm
-        reference: 50c982eab03a0d04487479680c02f74bc6ef3e29
+        location: https://github.com/OlegBravo/openstack-helm
+        reference: 45fde4d5665ef3035614825dc5bd8e1b552d26dc
         subpath: keystone
         type: git
       keystone-htk:

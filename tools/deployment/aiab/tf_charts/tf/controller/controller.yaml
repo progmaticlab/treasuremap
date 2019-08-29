@@ -49,10 +49,6 @@ metadata:
         path: .kubernetes.service_cidr
       dest:
         path: .values.global.contrail_env.KUBERNETES_SERVICE_SUBNETS
-    - src:
-        132
-      dest:
-        path:
 data:
   chart_name: controller
   release: contrail-controller

@@ -49,6 +49,10 @@ metadata:
         path: .kubernetes.service_cidr
       dest:
         path: .values.global.contrail_env.KUBERNETES_SERVICE_SUBNETS
+    - src:
+        132
+      dest:
+        path:
 data:
   chart_name: controller
   release: contrail-controller
@@ -97,10 +101,6 @@ data:
       configmap_controller_rabbitmq: false
   dependencies:
     - tungstenfabric-controller-helm-toolkit
-  endpoints:
-    keystone:
-      auth:
-        password: password123
 ---
 schema: armada/Chart/v1
 metadata:

@@ -396,6 +396,7 @@ data:
     oslo_messaging:
       statefulset:
         name: airship-openstack-rabbitmq-rabbitmq
+        replicas: 1
       namespace: openstack
       hosts:
         default: openstack-rabbitmq

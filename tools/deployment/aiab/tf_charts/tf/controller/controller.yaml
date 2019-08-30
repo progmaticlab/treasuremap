@@ -67,7 +67,7 @@ data:
         KUBERNETES_IP_FABRIC_SNAT: "true"
         DIST_SNAT_PROTO_PORT_LIST: "tcp:1024,udp:1024"
         AUTH_MODE: "keystone"
-        KEYSTONE_AUTH_ADMIN_PASSWORD: "password123"
+        KEYSTONE_AUTH_ADMIN_PASSWORD: "password"
         KEYSTONE_AUTH_ADMIN_TENANT: "admin"
         KEYSTONE_AUTH_ADMIN_USER: "admin"
         KEYSTONE_AUTH_HOST: "keystone.openstack.svc.cluster.local"

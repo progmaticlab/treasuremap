@@ -30,7 +30,7 @@ clouds:
     identity_api_version: 3
     auth:
       username: 'admin'
-      password: 'password123'
+      password: 'password'
       project_name: 'admin'
       project_domain_name: 'default'
       user_domain_name: 'default'
@@ -40,7 +40,7 @@ clouds:
     identity_api_version: 3
     auth:
       username: 'admin'
-      password: 'password123'
+      password: 'password'
       project_name: 'admin'
       project_domain_name: 'default'
       user_domain_name: 'default'

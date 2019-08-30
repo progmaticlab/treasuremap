@@ -293,7 +293,7 @@ def sanity_tests = {
                  'OSH_BR_EX_ADDR=',
                  'OSH_KEYSTONE_URL=https://identity-sw.atlantafoundry.com/v3',
                  'OSH_REGION_NAME=seaworthy',
-                 'OSH_ADMIN_PASSWD=password123']) {
+                 'OSH_ADMIN_PASSWD=password']) {
             sh 'tools/tests.sh'
         }
     }

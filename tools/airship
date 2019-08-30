@@ -29,7 +29,7 @@ fi
 ENV_FILE=$(mktemp)
 trap "{ rm -f $ENV_FILE; }" EXIT
 
-export OS_PASSWORD=${OS_PASSWORD:-password123}
+export OS_PASSWORD=${OS_PASSWORD:-password}
 # If shipyard password is defined, provide it to shipyard component
 if [ "$1" = "shipyard" ] && [ -n "$OS_SHIPYARD_PASSWORD" ]; then
     export OS_PASSWORD=${OS_SHIPYARD_PASSWORD}
@@ -37,8 +37,8 @@ fi
 
 # prepare docker environment file
 cat > $ENV_FILE << EOF
-PEGLEG_PASSPHRASE=${PEGLEG_PASSPHRASE:-password123}
-PEGLEG_SALT=${PEGLEG_SALT:-password123}
+PEGLEG_PASSPHRASE=${PEGLEG_PASSPHRASE:-password}
+PEGLEG_SALT=${PEGLEG_SALT:-password}
 
 OS_AUTH_URL=${OS_AUTH_URL:-http://keystone.ucp.svc.cluster.local:80/v3}
 OS_PASSWORD=${OS_PASSWORD}

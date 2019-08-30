@@ -13,7 +13,7 @@ OS_CLOUD_CFG=${HOME}/.openstack/clouds.yaml
 
 : ${OSH_KEYSTONE_URL:='http://keystone.openstack.svc.cluster.local:80/'}
 : ${OSH_REGION_NAME:='RegionOne'}
-: ${OSH_ADMIN_PASSWD:='password123'}
+: ${OSH_ADMIN_PASSWD:='password'}
 
 if [ ! -f $OS_CLOUD_CFG ]; then
     echo " => Creating OpenStack client config"

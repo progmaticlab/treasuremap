@@ -30,7 +30,7 @@ data:
           admin:
             region_name: RegionOne
             username: admin
-            password: password123
+            password: password
             project_name: admin
             user_domain_name: default
             project_domain_name: default
@@ -39,7 +39,7 @@ data:
             role: admin
             region_name: RegionOneaut
             username: keystone-test
-            password: password123
+            password: password
             project_name: test
             user_domain_name: default
             project_domain_name: default

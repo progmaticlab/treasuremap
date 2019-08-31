@@ -37,7 +37,7 @@ data:
           core_plugin: neutron_plugin_contrail.plugins.opencontrail.contrail_plugin.NeutronPluginContrailCoreV2
           service_plugins: neutron_plugin_contrail.plugins.opencontrail.loadbalancer.v2.plugin.LoadBalancerPluginV2
           l3_ha: False
-           api_extensions_path: /opt/plugin/site-packages/neutron_plugin_contrail/extensions:/opt/plugin/site-packages/neutron_lbaas/extensions
+          api_extensions_path: /opt/plugin/site-packages/neutron_plugin_contrail/extensions:/opt/plugin/site-packages/neutron_lbaas/extensions
           interface_driver: null
         quotas:
           quota_driver: neutron_plugin_contrail.plugins.opencontrail.quota.driver.QuotaDriver

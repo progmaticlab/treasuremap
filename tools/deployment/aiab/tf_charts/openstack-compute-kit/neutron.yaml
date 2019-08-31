@@ -84,8 +84,6 @@ data:
             multi_tenancy: True
           keystone:
             insecure: True
-  dependencies:
-    - neutron-htk
     manifests:
       daemonset_dhcp_agent: false
       daemonset_l3_agent: false
@@ -94,3 +92,29 @@ data:
       daemonset_ovs_agent: false
       daemonset_sriov_agent: false
       pod_rally_test: false
+  dependencies:
+    - neutron-htk
+...
+---
+schema: armada/Chart/v1
+metadata:
+  schema: metadata/Document/v1
+  name: neutron-htk
+  layeringDefinition:
+    abstract: false
+    layer: global
+  storagePolicy: cleartext
+  substitutions:
+    - src:
+        schema: pegleg/SoftwareVersions/v1
+        name: software-versions
+        path: .charts.osh.neutron-htk
+      dest:
+        path: .source
+data:
+  chart_name: neutron-htk
+  release: neutron-htk
+  namespace: neutron-htk
+  values: {}
+  dependencies: []
+...

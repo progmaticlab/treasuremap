@@ -2,14 +2,16 @@
 schema: armada/Chart/v1
 metadata:
   schema: metadata/Document/v1
-  name: neutron
+  name: neutron-fixme
   replacement: true
   layeringDefinition:
     abstract: false
     layer: site
     parentSelector:
-      name: neutron-global
+      name: neutron-type
     actions:
+      - method: replace
+        path: .values.dependencies
       - method: replace
         path: .values.conf.neutron
       - method: replace
@@ -23,6 +25,13 @@ metadata:
       - method: merge
         path: .
   storagePolicy: cleartext
+  substitutions:
+    - src:
+        schema: pegleg/CommonAddresses/v1
+        name: common-addresses
+        path: .tungstenfabric.ip
+      dest:
+        path: .values.conf.plugins.tungstenfabric.APISERVER.api_server_ip
 
 data:
   test:
@@ -31,7 +40,30 @@ data:
     timeout: 2700
 
   values:
+    images:
+      tags:
+        opencontrail_neutron_init: opencontrailnightly/contrail-openstack-neutron-init:ocata-master-latest
+    labels:
+      job:
+        node_selector_key: openstack-control-plane
+        node_selector_value: enabled
+      server:
+        node_selector_key: openstack-control-plane
+        node_selector_value: enabled
+      test:
+        node_selector_key: openstack-control-plane
+        node_selector_value: enabled
+    network:
+      backend:
+        - tungstenfabric
+    dependencies:
+      dynamic:
+        targeted:
+          tungstenfabric:
+            server:
+              daemonset: []
     conf:
+      openstack_version: ocata
       neutron:
         default:
           core_plugin: neutron_plugin_contrail.plugins.opencontrail.contrail_plugin.NeutronPluginContrailCoreV2
@@ -41,8 +73,6 @@ data:
           interface_driver: null
         quotas:
           quota_driver: neutron_plugin_contrail.plugins.opencontrail.quota.driver.QuotaDriver
-        oslo_messaging_rabbit:
-          heartbeat_timeout_threshold: 0
       plugins:
         tungstenfabric:
           apiserver:
@@ -60,4 +90,3 @@ data:
       daemonset_ovs_agent: false
       daemonset_sriov_agent: false
       pod_rally_test: false
-...

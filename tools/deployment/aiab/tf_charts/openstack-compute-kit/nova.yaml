@@ -10,12 +10,12 @@ metadata:
     parentSelector:
       name: nova-type
     actions:
+      - method: merge
+        path: .values.conf
       - method: replace
         path: .values.dependencies.dynamic.targeted
       - method: delete
         path: .values.ceph_client
-      - method: merge
-        path: .
   storagePolicy: cleartext
 data:
   values:

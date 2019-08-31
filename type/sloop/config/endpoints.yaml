@@ -56,6 +56,10 @@ data:
         default: "http"
       host_fqdn_override:
         default: null
+    ingress:
+      port:
+        ingress_default_server:
+          default: 8382
     postgresql:
       name: postgresql
       hosts:
@@ -398,7 +402,7 @@ data:
         default: openstack-rabbitmq
       host_fqdn_override:
         default: null
-      path: /keystone
+      path: /VHOST_NAME
       scheme: rabbit
       port:
         amqp:
@@ -441,6 +445,15 @@ data:
         api:
           default: 80
           internal: 5000
+      auth:
+        admin:
+          region_name: RegionOne
+          username: admin
+          password: password
+          project_name: admin
+          user_domain_name: default
+          project_domain_name: default
+          default_domain_id: default
     image:
       name: glance
       hosts:

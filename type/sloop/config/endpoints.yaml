@@ -398,7 +398,7 @@ data:
         default: openstack-rabbitmq
       host_fqdn_override:
         default: null
-      path: /VHOST_NAME
+      path: /keystone
       scheme: rabbit
       port:
         amqp:

@@ -2,13 +2,13 @@
 schema: armada/Chart/v1
 metadata:
   schema: metadata/Document/v1
-  name: neutron-fixme
+  name: neutron
   replacement: true
   layeringDefinition:
     abstract: false
     layer: site
     parentSelector:
-      name: neutron-type
+      name: neutron-global
     actions:
       - method: replace
         path: .values.dependencies
@@ -90,3 +90,4 @@ data:
       daemonset_ovs_agent: false
       daemonset_sriov_agent: false
       pod_rally_test: false
+...

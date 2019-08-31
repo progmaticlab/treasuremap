@@ -90,4 +90,3 @@ data:
       daemonset_ovs_agent: false
       daemonset_sriov_agent: false
       pod_rally_test: false
-...

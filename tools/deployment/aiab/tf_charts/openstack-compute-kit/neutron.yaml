@@ -102,7 +102,7 @@ metadata:
   name: neutron-htk
   layeringDefinition:
     abstract: false
-    layer: global
+    layer: site
   storagePolicy: cleartext
   substitutions:
     - src:

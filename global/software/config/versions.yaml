@@ -206,7 +206,7 @@ data:
         type: git
       neutron:
         location: https://github.com/OlegBravo/openstack-helm
-        reference: 9dc38dd0ae9c2935fa742c07898b013e2049ec0e
+        reference: 985372739dd03746242a8040ac48ea00be37ca55
         subpath: neutron
         type: git
       neutron-htk:
@@ -216,7 +216,7 @@ data:
         type: git
       nova:
         location: https://github.com/OlegBravo/openstack-helm
-        reference: 9dc38dd0ae9c2935fa742c07898b013e2049ec0e
+        reference: 985372739dd03746242a8040ac48ea00be37ca55
         subpath: nova
         type: git
       nova-htk:

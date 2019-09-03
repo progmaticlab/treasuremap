@@ -13,7 +13,7 @@ metadata:
       - method: merge
         path: .values.conf
       - method: replace
-        path: .values.dependencies.dynamic.targeted
+        path: .values.dependencies
       - method: delete
         path: .values.ceph_client
   storagePolicy: cleartext

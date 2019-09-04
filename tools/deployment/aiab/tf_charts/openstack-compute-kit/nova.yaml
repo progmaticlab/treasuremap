@@ -12,12 +12,6 @@ metadata:
     actions:
       - method: merge
         path: .values.conf
-      - method: delete
-        path: .values.dependencies.dynamic.tageted.openvswitch
-      - method: delete
-        path: .values.dependencies.dynamic.tageted.linuxbridge
-      - method: delete
-        path: .values.dependencies.dynamic.tageted.sriov
       - method: replace
         path: .values.dependencies
       - method: delete

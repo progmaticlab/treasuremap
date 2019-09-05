@@ -103,7 +103,6 @@ mv ${AIAB_DIR}/tf_charts/bootstrap.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}
 mv ${AIAB_DIR}/tf_charts/common-addresses.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}/networks/common-addresses.yaml
 mv ${AIAB_DIR}/tf_charts/full-site.yaml  ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/full-site.yaml
 mv ${AIAB_DIR}/tf_charts/genesis.yaml ${AIAB_DIR}/../../../site/${TARGET_SITE}/profiles/genesis.yaml
-mv ${AIAB_DIR}/tf_charts/endpoints.yaml ${AIAB_DIR}/../../../type/sloop/config/endpoints.yaml
 
 cp -r  ${AIAB_DIR}/tf_charts/versions.yaml ${AIAB_DIR}/../../../global/software/config/versions.yaml
 cp -r ${AIAB_DIR}/tf_charts/ingress ${AIAB_DIR}/../../../site/${TARGET_SITE}/software/charts/kubernetes/

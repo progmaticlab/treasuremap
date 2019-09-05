@@ -18,5 +18,5 @@ data:
   sequenced: false
   chart_group:
     - libvirt
-    - neutron-fixme
+    - neutron
     - nova

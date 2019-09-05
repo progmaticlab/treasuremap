@@ -93,13 +93,11 @@ data:
 
   dns:
     cluster_domain: cluster.local
-    node_domain: cluster.local
     service_ip: 10.96.0.10
     upstream_servers:
       - 8.8.8.8
       - 8.8.4.4
-      - 208.67.222.222
-    upstream_servers_joined: 8.8.8.8,8.8.4.4,208.67.222.222
+    upstream_servers_joined: 8.8.8.8,8.8.4.4
 
   genesis:
     hostname: REPLACEME

@@ -65,7 +65,7 @@ data:
     conf:
       openstack_version: ocata
       neutron:
-        default:
+        DEFAULT:
           core_plugin: neutron_plugin_contrail.plugins.opencontrail.contrail_plugin.NeutronPluginContrailCoreV2
           service_plugins: neutron_plugin_contrail.plugins.opencontrail.loadbalancer.v2.plugin.LoadBalancerPluginV2
           l3_ha: False

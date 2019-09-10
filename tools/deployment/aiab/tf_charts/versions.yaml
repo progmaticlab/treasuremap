@@ -705,7 +705,8 @@ data:
         dep_check: quay.io/stackanetes/kubernetes-entrypoint:v0.2.1
       thirdparty:
         kafka: docker.io/opencontrailnightly/contrail-external-kafka:ocata-master-853 
-        cassandra: docker.io/opencontrailnightly/contrail-external-cassandra:ocata-master-853 
+        cassandra: docker.io/opencontrailnightly/contrail-external-cassandra:ocata-master-853
+        analytics_query_engine: docker.io/opencontrailnightly/contrail-analytics-query-engine:ocata-master-855
         redis: docker.io/opencontrailnightly/contrail-external-redis:ocata-master-853 
         zookeeper: docker.io/opencontrailnightly/contrail-external-zookeeper:ocata-master-853 
         rabbitmq: docker.io/opencontrailnightly/contrail-external-rabbitmq:ocata-master-853 

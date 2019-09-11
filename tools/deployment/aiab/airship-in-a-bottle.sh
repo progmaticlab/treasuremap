@@ -84,8 +84,7 @@ echo "Let's collect some information about your VM to get started."
 sleep 1
 
 echo "Setup Tungsten Fabric requirements "
-apt-get install -y python-setuptools ntp
-easy_install pip
+apt-get install -y python-setuptools ntp easy_install pip
 pip install ipaddress
 export NODE_NET_IFACE=$(ip route get 1 | grep -o "dev.*" | awk '{print $2}')
 export NODE_NET_IFACE_GATEWAY_IP="$(ip route get 1 | awk '/1.0.0.0/{print $3}')"

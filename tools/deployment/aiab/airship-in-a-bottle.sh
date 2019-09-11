@@ -84,6 +84,7 @@ echo "Let's collect some information about your VM to get started."
 sleep 1
 
 echo "Setup Tungsten Fabric requirements "
+apt-get update
 apt-get install -y python-setuptools ntp
 easy_install pip
 pip install ipaddress

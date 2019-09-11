@@ -23,7 +23,7 @@ data:
   values:
     images:
       tags:
-        opencontrail_compute_init: opencontrailnightly/contrail-openstack-compute-init:ocata-master-855
+        opencontrail_compute_init: opencontrailnightly/contrail-openstack-compute-init:master-862
     conf:
       ceph:
         enabled: false

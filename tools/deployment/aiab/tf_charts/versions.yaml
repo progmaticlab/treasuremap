@@ -544,27 +544,27 @@ data:
     tungstenfabric:
       controller:
         type: git
-        location: https://github.com/juniper/contrail-helm-deployer
+        location: https://github.com/OlegBravo/contrail-helm-deployer
         subpath: contrail-controller
         reference: master
       analytics:
         type: git
-        location: https://github.com/juniper/contrail-helm-deployer
+        location: https://github.com/OlegBravo/contrail-helm-deployer
         subpath: contrail-analytics
         reference: master
       thirdparty:
         type: git
-        location: https://github.com/juniper/contrail-helm-deployer
+        location: https://github.com/OlegBravo/contrail-helm-deployer
         subpath: contrail-thirdparty
         reference: master
       vrouter:
         type: git
-        location: https://github.com/juniper/contrail-helm-deployer
+        location: https://github.com/OlegBravo/contrail-helm-deployer
         subpath: contrail-vrouter
         reference: master
       tf-htk:
         type: git
-        location: https://github.com/juniper/contrail-helm-deployer
+        location: https://github.com/OlegBravo/contrail-helm-deployer
         subpath: helm-toolkit-contrail
         reference: master
   files:

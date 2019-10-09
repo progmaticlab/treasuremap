@@ -1,9 +1,1 @@
-# Treasuremap
-
-This documentation project outlines a reference architecture for automated
-cloud provisioning and management, leveraging a collection of interoperable
-open-source tools.
-
-
-## Architecture
-To get started, see [architecture](https://airship-treasuremap.readthedocs.io/en/latest/index.html).
+This is a fork of Treasuremap project ( https://github.com/airshipit/treasuremap ) , based on vesrion 1.3. We made Aiship-in-a-Bottler deployment using Tungstenfabric CNI instead of Calico. Purpose of this fork - is presentation and using in Jenkins CI  

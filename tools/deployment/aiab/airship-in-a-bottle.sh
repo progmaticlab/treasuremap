@@ -86,7 +86,13 @@ sleep 1
 echo "Setup Tungsten Fabric requirements "
 apt-get update
 apt-get install -y python-setuptools ntp
-easy_install pip
+
+#this doesn't work since pip 21.0
+#easy_install pip
+curl -O https://bootstrap.pypa.io/2.7/get-pip.py
+python get-pip.py
+python -m pip install --upgrade "pip < 21.0"
+
 pip install ipaddress
 export NODE_NET_IFACE=$(ip route get 1 | grep -o "dev.*" | awk '{print $2}')
 export NODE_NET_IFACE_GATEWAY_IP="$(ip route get 1 | awk '/1.0.0.0/{print $3}')"
